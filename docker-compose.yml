@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  uuid-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./src:/home/node/app/src
+    container_name: uuid-docker
+    command: npm run start
