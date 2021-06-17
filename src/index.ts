@@ -2,7 +2,7 @@
 * Returns the longest subsequent list
 *
 * @param input - The user input
-* @returns list
+* @returns string of longest subsequent number
 *
 */
 export function getLongSubsequentList (input: string): string {

@@ -5,7 +5,7 @@ exports.getLongSubsequentList = void 0;
 * Returns the longest subsequent list
 *
 * @param input - The user input
-* @returns list
+* @returns string of longest subsequent number
 *
 */
 function getLongSubsequentList(input) {
