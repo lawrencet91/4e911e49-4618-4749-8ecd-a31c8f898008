@@ -35,7 +35,4 @@ jobs:
       - name: Run test
         run: npm test
       - name: Run ESLint
-        uses: wearerequired/lint-action@v1
-        with:
-          eslint: true
-          prettier: true
+        uses: stefanoeb/eslint-action@1.0.2
