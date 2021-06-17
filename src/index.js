@@ -14,7 +14,6 @@ function getLongSubsequentList(input) {
     var longestLength = 1;
     var firstIndex = 0;
     var lastIndex = 0;
-    var longestSubsequence = '';
     inputList.forEach(function (element, index) {
         if (+inputList[index] < +inputList[index + 1]) {
             currentLength++;
@@ -28,11 +27,7 @@ function getLongSubsequentList(input) {
             currentLength = 1;
         }
     });
-    // for (let i: number = firstIndex; i < lastIndex; i++) {
-    //   longestSubsequence += inputList[i] + " ";
-    // }
     return inputList.slice(firstIndex, lastIndex).join(" ").toString();
-    // longestSubsequence.trim();
 }
 exports.getLongSubsequentList = getLongSubsequentList;
 ;
