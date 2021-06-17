@@ -9,13 +9,13 @@ exports.getLongSubsequentList = void 0;
 *
 */
 function getLongSubsequentList(input) {
-    var inputList = input.split(' ');
+    var inputList = input.split(" ").map(function (n) { return parseInt(n); });
     var currentLength = 1;
     var longestLength = 1;
     var firstIndex = 0;
     var lastIndex = 0;
     inputList.forEach(function (element, index) {
-        if (+inputList[index] < +inputList[index + 1]) {
+        if (element < inputList[index + 1]) {
             currentLength++;
             if (currentLength > longestLength) {
                 longestLength = currentLength;
@@ -27,7 +27,7 @@ function getLongSubsequentList(input) {
             currentLength = 1;
         }
     });
-    return inputList.slice(firstIndex, lastIndex).join(" ").toString();
+    return inputList.slice(firstIndex, lastIndex).join(" ");
 }
 exports.getLongSubsequentList = getLongSubsequentList;
 ;

@@ -14,7 +14,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: dev
+      target: base
     volumes:
       - ./src:/home/node/app/src
     command: npm run test
