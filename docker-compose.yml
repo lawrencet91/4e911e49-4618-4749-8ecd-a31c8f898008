@@ -10,3 +10,11 @@ services:
       - ./src:/home/node/app/src
     container_name: uuid-docker
     command: npm run start
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - ./src:/home/node/app/src
+    command: npm run test
