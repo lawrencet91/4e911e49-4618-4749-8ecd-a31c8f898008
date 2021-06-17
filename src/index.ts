@@ -6,27 +6,25 @@
 *
 */
 export function getLongSubsequentList (input: string): string {
-  const inputList = input.split(' ');
-  let currentLength = 1;
-  let longestLength = 1;
-  let firstIndex = 0;
-  let lastIndex = 0;
-  for (let i = 0; i < inputList.length - 1; i++) {
-    if (+inputList[i] < +inputList[i+1]) {
+  const inputList: string[] = input.split(' ');
+  let currentLength: number = 1;
+  let longestLength: number = 1;
+  let firstIndex: number = 0;
+  let lastIndex: number = 0;
+
+  inputList.forEach((element, index) => {
+    if (+inputList[index] < +inputList[index + 1]) {
       currentLength++;
       if (currentLength > longestLength) {
         longestLength = currentLength;
-        firstIndex = i + 2 - currentLength;
-        lastIndex = i + 2;
+        firstIndex = index + 2 - currentLength;
+        lastIndex = index + 2;
       }
     }
     else {
       currentLength = 1;
     }
-  }
-  let str = '';
-  for (let i = firstIndex; i < lastIndex; i++) {
-    str += inputList[i] + " ";
-  }
-  return str.trim();
+  });
+
+  return inputList.slice(firstIndex, lastIndex).join(" ").toString();
 };

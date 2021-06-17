@@ -14,24 +14,25 @@ function getLongSubsequentList(input) {
     var longestLength = 1;
     var firstIndex = 0;
     var lastIndex = 0;
-    for (var i = 0; i < inputList.length - 1; i++) {
-        if (+inputList[i] < +inputList[i + 1]) {
+    var longestSubsequence = '';
+    inputList.forEach(function (element, index) {
+        if (+inputList[index] < +inputList[index + 1]) {
             currentLength++;
             if (currentLength > longestLength) {
                 longestLength = currentLength;
-                firstIndex = i + 2 - currentLength;
-                lastIndex = i + 2;
+                firstIndex = index + 2 - currentLength;
+                lastIndex = index + 2;
             }
         }
         else {
             currentLength = 1;
         }
-    }
-    var str = '';
-    for (var i = firstIndex; i < lastIndex; i++) {
-        str += inputList[i] + " ";
-    }
-    return str.trim();
+    });
+    // for (let i: number = firstIndex; i < lastIndex; i++) {
+    //   longestSubsequence += inputList[i] + " ";
+    // }
+    return inputList.slice(firstIndex, lastIndex).join(" ").toString();
+    // longestSubsequence.trim();
 }
 exports.getLongSubsequentList = getLongSubsequentList;
 ;
